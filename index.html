@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4a4a4a" />
+    <title>我的待办清单</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app" aria-labelledby="page-title">
+      <header>
+        <p class="eyebrow">TODAY'S FOCUS</p>
+        <h1 id="page-title">我的待办清单</h1>
+        <p id="task-summary" class="summary">准备开始吧</p>
+      </header>
+
+      <form id="task-form" class="task-form">
+        <label class="sr-only" for="date-input">日期</label>
+        <input id="date-input" type="date" required />
+        <label class="sr-only" for="task-input">新增任务</label>
+        <input id="task-input" type="text" maxlength="120" placeholder="例如：完成今天的阅读" autocomplete="off" required />
+        <button type="submit">添加待办</button>
+      </form>
+
+      <section class="task-section" aria-label="任务列表">
+        <div id="date-groups" class="date-groups"></div>
+        <p id="empty-state" class="empty-state">还没有待办，选择日期后添加第一项吧。</p>
+      </section>
+
+      <button id="clear-completed" class="clear-button" type="button">清除已完成</button>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
