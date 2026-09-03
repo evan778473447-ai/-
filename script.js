@@ -1,4 +1,3 @@
-
 const storageKey = "my-todo-list-date-groups";
 const supabaseUrl = "https://ejfwqhrxshrnafeylonr.supabase.co";
 const supabasePublishableKey = "sb_publishable_dzmkc1aMYlsHOjrpp_FMQA_TQWdEaOG";
@@ -146,7 +145,6 @@ signUpButton.addEventListener("click", async () => {
 signOutButton.addEventListener("click", () => supabaseClient.auth.signOut());
 supabaseClient.auth.onAuthStateChange((_event, session) => updateAuth(session?.user || null));
 supabaseClient.auth.getSession().then(({ data }) => updateAuth(data.session?.user || null));
-}
 
 function formatDate(dateString) {
   const date = new Date(`${dateString}T00:00:00`);
