@@ -15,21 +15,41 @@
         <p id="task-summary" class="summary">准备开始吧</p>
       </header>
 
+      <section class="account-panel" aria-label="云端同步账户">
+        <span id="sync-status">本地模式</span>
+        <div id="auth-controls">
+          <input id="email-input" type="email" placeholder="邮箱" autocomplete="email" />
+          <input id="password-input" type="password" placeholder="密码（至少 6 位）" autocomplete="current-password" />
+          <button id="sign-in-button" type="button">登录</button>
+          <button id="sign-up-button" class="text-button" type="button">注册</button>
+        </div>
+        <button id="sign-out-button" class="text-button" type="button" hidden>退出登录</button>
+      </section>
+
       <form id="task-form" class="task-form">
         <label class="sr-only" for="date-input">日期</label>
         <input id="date-input" type="date" required />
         <label class="sr-only" for="task-input">新增任务</label>
         <input id="task-input" type="text" maxlength="120" placeholder="例如：完成今天的阅读" autocomplete="off" required />
         <button type="submit">添加待办</button>
+        <div class="task-options">
+          <label class="image-picker" for="image-input">添加图片</label>
+          <input id="image-input" class="sr-only" type="file" accept="image/*" />
+          <label class="priority-option"><input id="priority-input" type="checkbox" /> 标记为重点</label>
+          <span id="image-status" class="image-status">也可直接粘贴图片</span>
+        </div>
       </form>
 
       <section class="task-section" aria-label="任务列表">
+        <nav id="date-tabs" class="date-tabs" aria-label="选择计划日期"></nav>
         <div id="date-groups" class="date-groups"></div>
-        <p id="empty-state" class="empty-state">还没有待办，选择日期后添加第一项吧。</p>
+        <p id="empty-state" class="empty-state">这一天还没有待办，选择日期后添加第一项吧。</p>
       </section>
 
       <button id="clear-completed" class="clear-button" type="button">清除已完成</button>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
   </body>
 </html>
+
